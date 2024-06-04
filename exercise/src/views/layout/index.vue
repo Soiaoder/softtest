@@ -1,26 +1,24 @@
 <template>
   <el-container class="layout-container">
     <el-aside class="aside" width="auto"
-      ><AsideBar class="aside-menu" :is-collapse="isCollapse" />
+      ><SideBar class="aside-menu" :is-collapse="isCollapse" />
     </el-aside>
     <el-container>
-      <HeadBar @changeCollapse="changeCollapse" />
+      <HeaderBar @changeCollapse="changeCollapse" />
       <el-main style="height: 100px" class="main"><router-view /></el-main>
-      <el-footer style="height: 20px; font-size: 12px; text-align: center">
-        软件测试练习</el-footer
-      >
+      <el-footer style="height: 20px; font-size: 12px; text-align: center">软件测试练习</el-footer>
     </el-container>
   </el-container>
 </template>
 
 <script>
-import AsideBar from './components/asidebar'
-import HeadBar from './components/headbar'
+import SideBar from './components/sidebar'
+import HeaderBar from './components/headerbar'
 export default {
   name: 'LayoutIndex',
   components: {
-    AsideBar,
-    HeadBar,
+    SideBar,
+    HeaderBar,
   },
   props: {},
   data() {

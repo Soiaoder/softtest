@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'HeadBar',
+  name: 'HeaderBar',
   components: {},
   props: {},
   data() {

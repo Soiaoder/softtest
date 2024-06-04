@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: 'AsideBar',
+  name: 'SideBar',
   components: {},
   props: ['is-collapse'],
   data() {
