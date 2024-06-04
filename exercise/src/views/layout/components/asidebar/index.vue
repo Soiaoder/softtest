@@ -16,16 +16,16 @@
       <el-menu-item-group>
         <el-menu-item index="/triangle">1.判断三角形类型</el-menu-item>
         <el-menu-item index="/calendar">2.万年历问题</el-menu-item>
-        <el-menu-item index="/two">3.销售管理系统</el-menu-item>
-        <el-menu-item index="/sales">4.电脑销售系统</el-menu-item>
-        <el-menu-item index="/four">5.电商平台系统</el-menu-item>
-        <el-menu-item index="/cash">6.电信收费问题</el-menu-item>
-        <el-menu-item index="/seven">7.实时C/S系统</el-menu-item>
-        <el-menu-item index="/nine">8.ATM系统</el-menu-item>
-        <el-menu-item index="/ten">9.ERP系统</el-menu-item>
-        <el-menu-item index="/eleven">10.实时Web系统</el-menu-item>
-        <el-menu-item index="/twelve">11.构建程序图</el-menu-item>
-        <el-menu-item index="/thirteen">12.销售系统</el-menu-item>
+        <el-menu-item index="/employee">3.员工年终考评</el-menu-item>
+        <el-menu-item index="/computer">4.电脑销售系统</el-menu-item>
+        <el-menu-item index="/ecommerce">5.电商平台系统</el-menu-item>
+        <el-menu-item index="/telecom">6.电信收费问题</el-menu-item>
+        <el-menu-item index="/cs">7.实时C/S系统</el-menu-item>
+        <el-menu-item index="/atm">8.ATM系统</el-menu-item>
+        <el-menu-item index="/erp">9.ERP系统</el-menu-item>
+        <el-menu-item index="/web">10.实时Web系统</el-menu-item>
+        <el-menu-item index="/program">11.构建程序图</el-menu-item>
+        <el-menu-item index="/sales">12.销售员佣金</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
   </el-menu>

@@ -38,21 +38,10 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {
-  },
-  methods: {
-    
-  },
+  mounted() {},
+  methods: {},
 };
-
-
-
-
-
 </script>
-
-
-
 
 <style scoped lang="less">
 /deep/ .el-table .error-row {
@@ -86,8 +75,5 @@ export default {
   width:600px;
   top:50%;
   left:50%;
-}
-.block{
-
 }
 </style>

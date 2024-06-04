@@ -38,7 +38,7 @@ import ExcelFile from "./excelfile";
 import BugRecord from "./bug";
 
 export default {
-  name: "Sales",
+  name: "Computer",
   components: {
     SalesQuestion,
     SystemTest,

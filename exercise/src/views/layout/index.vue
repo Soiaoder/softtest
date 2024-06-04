@@ -7,7 +7,7 @@
       <HeadBar @changeCollapse="changeCollapse" />
       <el-main style="height: 100px" class="main"><router-view /></el-main>
       <el-footer style="height: 20px; font-size: 12px; text-align: center">
-        软件测试平时作业练习平台</el-footer
+        软件测试练习</el-footer
       >
     </el-container>
   </el-container>

@@ -2,19 +2,20 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/home/'
 import Layout from '@/views/layout/'
-import Cash from '@/views/cash/'
+
 import Triangle from '@/views/triangle'
+import Calendar from '@/views/calendar'
+import Computer from '@/views/computer/'
+import Telecom from '@/views/telecom/'
+
+import Employee from '@/views/employee/'
+import Ecommerce from '@/views/ecommerce/'
+import CS from '@/views/cs/'
+import ATM from '@/views/atm/'
+import ERP from '@/views/erp/'
+import Web from '@/views/web/'
+import Program from '@/views/program/'
 import Sales from '@/views/sales/'
-
-
-import Two from '@/views/two/'
-import Four from '@/views/four/'
-import Seven from '@/views/seven/'
-import Nine from '@/views/nine/'
-import Ten from '@/views/ten/'
-import Eleven from '@/views/eleven/'
-import Twelve from '@/views/twelve/'
-import Thirteen from '@/views/thirteen/'
 
 Vue.use(VueRouter)
 
@@ -29,9 +30,9 @@ const routes = [
         component: Home
       },
       {
-        path: '/cash',
-        name: 'cash',
-        component: Cash
+        path: '/telecom',
+        name: 'telecom',
+        component: Telecom
       }, {
         path: '/triangle',
         name: 'triangle',
@@ -40,52 +41,52 @@ const routes = [
       {
         path: '/calendar',
         name: 'calendar',
-        component: () => import("@/views/calendar")
+        component: Calendar
+      },
+      {
+        path: '/computer',
+        name: 'computer',
+        component: Computer
+      },
+      {
+        path: '/employee',
+        name: 'employee',
+        component: Employee
+      },
+      {
+        path: '/ecommerce',
+        name: 'ecommerce',
+        component: Ecommerce
+      },
+      {
+        path: '/cs',
+        name: 'cs',
+        component: CS
+      },
+      {
+        path: '/atm',
+        name: 'atm',
+        component: ATM
+      },
+      {
+        path: '/erp',
+        name: 'erp',
+        component: ERP
+      },
+      {
+        path: '/web',
+        name: 'web',
+        component: Web
+      },
+      {
+        path: '/program',
+        name: 'program',
+        component: Program
       },
       {
         path: '/sales',
         name: 'sales',
         component: Sales
-      },
-      {
-        path: '/two',
-        name: 'two',
-        component: Two
-      },
-      {
-        path: '/four',
-        name: 'four',
-        component: Four
-      },
-      {
-        path: '/seven',
-        name: 'seven',
-        component: Seven
-      },
-      {
-        path: '/nine',
-        name: 'nine',
-        component: Nine
-      },
-      {
-        path: '/ten',
-        name: 'ten',
-        component: Ten
-      },
-      {
-        path: '/eleven',
-        name: 'eleven',
-        component: Eleven
-      },
-      {
-        path: '/twelve',
-        name: 'twelve',
-        component: Twelve
-      },
-      {
-        path: '/thirteen',
-        name: 'thirteen',
-        component: Thirteen
       }
     ]
   }

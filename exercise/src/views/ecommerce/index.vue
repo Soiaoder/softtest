@@ -13,7 +13,7 @@
 <script>
 import SalesQuestion from './question'
 export default {
-  name: 'four',
+  name: 'Ecommerce',
   components: { SalesQuestion },
   props: {},
   data() {
@@ -74,7 +74,5 @@ export default {
   width: 600px;
   top: 50%;
   left: 50%;
-}
-.block {
 }
 </style>

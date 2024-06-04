@@ -2,29 +2,18 @@
   <div>
     <el-card shadow="hover">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-
         <el-tab-pane label="问题描述" name="first">
           <SalesQuestion />
         </el-tab-pane>
-
-
       </el-tabs>
     </el-card>
-
-
-
-
-
-
-    
   </div>
 </template>
 
 <script>
-
 import SalesQuestion from "./question";
 export default {
-  name: "two",
+  name: "Employee",
   components: { SalesQuestion },
   props: {},
   data() {
@@ -49,23 +38,10 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {
-    
-
-  },
-  methods: {
-    
-  },
+  mounted() {},
+  methods: {},
 };
-
-
-
-
-
 </script>
-
-
-
 
 <style scoped lang="less">
 /deep/ .el-table .error-row {
@@ -99,8 +75,5 @@ export default {
   width:600px;
   top:50%;
   left:50%;
-}
-.block{
-
 }
 </style>

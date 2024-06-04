@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: "HomeIndex",
   components: {},
@@ -30,5 +29,4 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 </style>
