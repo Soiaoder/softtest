@@ -6,7 +6,6 @@
     <el-container>
       <HeaderBar @changeCollapse="changeCollapse" />
       <el-main style="height: 100px" class="main"><router-view /></el-main>
-      <el-footer style="height: 20px; font-size: 12px; text-align: center">软件测试练习</el-footer>
     </el-container>
   </el-container>
 </template>
