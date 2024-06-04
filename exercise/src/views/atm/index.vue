@@ -2,8 +2,8 @@
   <div>
     <el-card shadow="hover">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="问题描述" name="first">
-          <SalesQuestion />
+        <el-tab-pane label="问题" name="first">
+          <ATMQuestion />
         </el-tab-pane>
       </el-tabs>
     </el-card>
@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import SalesQuestion from "./question";
+import ATMQuestion from "./question";
 export default {
   name: "ATM",
-  components: { SalesQuestion },
+  components: { ATMQuestion },
   props: {},
   data() {
     return {
