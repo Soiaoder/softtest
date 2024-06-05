@@ -1,631 +1,225 @@
 <template>
-    <div>
-        <span style="font-size:24px;"><b>&nbsp;ERP系统</b></span>
-      <div style="font-size:16px;">
-        
-      <p >下图是ERP系统的流图，根据系统需求和流程图，归纳出比较清晰的主、备选流关系图，并基于主、备选流设计场景和相应的测试用例。</p>
-       <p> MPS（ Master Production Schedule），MRP(Manufacturing Resource Planning)</p>
-<img style="width:60%;height:60%;" src="./ten.png"/>
-  
-  <p style="margin-top:100px;font-size:20px;">分析如下：</p>
-</div>
-<p>程序的基本流：</p>
-<p>根据销售合同制订计划需求，计算MPS，可用库存满足销售需求，销售发货管理，货确认发完，合同结束。</p>
-<p>备选流：</p>
-<p>1.可用库存不满足需求
-
-2.没有可用库存
-
-3.可用库存不满足生产需求
-
-4.生产的货不合格
-
-5.生产的货物是废品
-
-6.生产的货物合格
-
-7.采购的货不合格
-
-8.货未发完
-
-9.采购合格</p>
-<p>根据基本流和备选流生成场景:</p>
-
-
-<el-table
-      :data="questionData"
-      style="width: 100%;font-size:12px;"
-      >
-      <el-table-column
-        prop="scenes"
-        label="场景"
-        width="140"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="one"
-        label="one"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="two"
-        label="two"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="three"
-        label="three"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="four"
-        label="four"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="five"
-        label="five"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="six"
-        label="six"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="seven"
-        label="seven"
-        width="240"
-        align="center">
-      </el-table-column>
-    </el-table>
-
-<p style="margin-top:100px;">生成测试用例如下:</p>
-<el-table
-      :data="resultData"
-      style="width: 100%;font-size:12px;"
-      >
-      <el-table-column
-        prop="num"
-        label="用例id"
-        width="140"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="scenes"
-        label="场景/条件"
-        width="140"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="one"
-        label="可用库存是否满足销售需求"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="two"
-        label="是否有可用库存"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="three"
-        label="可用库存是否满足生产需求"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="four"
-        label="货物情况"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="five"
-        label="采购货物情况"
-        width="240"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="six"
-        label="货是否发完"
-        width="240"
-        align="center">
-      </el-table-column>
-    </el-table>
-
+  <div>
+    <span style="font-size:24px;"><b>ERP系统</b></span>
+    <div style="font-size:16px;">
+      <p>下图是ERP系统的流图，根据系统需求和流程图，归纳出比较清晰的主、备选流关系图，并基于主、备选流设计场景和相应的测试用例。</p>
+      <p>MPS(Master Production Schedule)，MRP(Manufacturing Resource Planning)</p>
+      <img style="width:360px;height:auto;" src="./img/erp.png" />
     </div>
+    <div style="margin-top:50px;">
+      <p style="font-size:20px; font-weight:bold;">解答</p>
 
+      <p><b>基本流、备选流关系图：</b></p>
+      <img style="width:500px;height:auto;" src="./img/flowchart.png" />
 
+      <p><b>基本流：</b></p>
+      <p>销售合同->计划需求->MPS计算->主生产计划->MRP计算->
+        计划请购单->计划采购订单->采购订单->采购到货处理->采购质检->采购入库->
+        计划生产订单->车间作业计划->生产工序管理->工序转移->完工处理->生产质检->
+        生产入库->销售发货处理->合同结案</p>
 
+      <p><b>备选流：</b></p>
+      <p>备选流1：可用库存已满足销售需求</p>
+      <p>备选流2：已有足够的可用库存</p>
+      <p>备选流3：可用库存已满足生产需求</p>
+      <p>备选流4：采购的货物不合格</p>
+      <p>备选流5：生产的货物不合格</p>
+      <p>备选流6：生产的货物是废品</p>
+      <p>备选流7：货物未发完</p>
+
+      <p><b>基于基本流和备选流设计的场景：</b></p>
+      <el-table :data="flowData" style="width: 100%;font-size:12px;">
+        <el-table-column prop="scene" label="场景" width="480"></el-table-column>
+        <el-table-column prop="description" label="说明" width="480"></el-table-column>
+      </el-table>
+
+      <p><b>相应的测试用例：</b></p>
+      <el-table :data="useCaseData" style="width: 100%;font-size:12px;">
+        <el-table-column prop="id" label="用例编号" width="100" align="center"></el-table-column>
+        <el-table-column prop="scene" label="场景" width="175" align="center"></el-table-column>
+        <el-table-column prop="inventory_sale" label="可用库存是否满足销售需求" width="174" align="center"></el-table-column>
+        <el-table-column prop="inventory" label="是否有可用库存" width="174" align="center"></el-table-column>
+        <el-table-column prop="inventory_production" label="可用库存是否满足生产需求" width="174" align="center"></el-table-column>
+        <el-table-column prop="purchase" label="采购是否合格" width="174" align="center"></el-table-column>
+        <el-table-column prop="production" label="生产合格情况" width="174" align="center"></el-table-column>
+        <el-table-column prop="shipment" label="货是否发完" width="174" align="center"></el-table-column>
+      </el-table>
+    </div>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: "SalesQuestion",
+  name: "ERPQuestion",
   components: {},
   props: {},
   data() {
-    return {questionData:[{
-          scenes:"场景1—合同成功结束",
-          one:"基本流",
-          two:"",
-          three:"",
-          four:"",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景2—可用库存不满足销售需求",
-          one:"基本流",
-          two:"备选流1",
-          three:"",
-          four:"",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景3—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，但生产的货物不合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流4",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景4—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，生产的货物是废品",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流5",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景5—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购的货物不合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流7",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景6—货未发完",
-          one:"基本流",
-          two:"备选流8",
-          three:"",
-          four:"",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景7—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，生产的货物合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流6",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景8—库存不满足销售需求，有可用库存但货未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流8",
-          four:"",
-          five:"",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景9—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物合格，但货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流6",
-          five:"备选流8",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景10—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物不合格，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流4",
-          five:"备选流8",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景11—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物为废品，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流5",
-          five:"备选流8",
-          six:"",
-          seven:"",
-        },
-        {
-          scenes:"场景12—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物合格，但货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流6",
-          six:"备选流8",
-          seven:"备选流9",
-        },
-        {
-          scenes:"场景13—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物不合格，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流4",
-          six:"备选流8",
-          seven:"备选流9",
-        },
-        {
-          scenes:"场景14—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物为废品，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流5",
-          six:"备选流8",
-          seven:"备选流9",
-        },
-        {
-          scenes:"场景15—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物合格，但货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流6",
-          six:"备选流7",
-          seven:"备选流8",
-        },
-        {
-          scenes:"场景16—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物不合格，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流4",
-          six:"备选流7",
-          seven:"备选流8",
-        },
-        {
-          scenes:"场景17—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物为废品，且货物未发完",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流5",
-          five:"备选流6",
-          six:"备选流7",
-          seven:"",
-        },
-        {
-          scenes:"场景18—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流6",
-          six:"备选流9",
-          seven:"",
-        },
-        {
-          scenes:"场景19—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物不合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流4",
-          six:"备选流9",
-          seven:"",
-        },
-        {
-          scenes:"场景20—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物为废品",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流5",
-          six:"备选流9",
-          seven:"",
-        },
-        {
-          scenes:"场景21—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流6",
-          six:"备选流7",
-          seven:"",
-        },
-        {
-          scenes:"场景22—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物不合格",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流4",
-          six:"备选流7",
-          seven:"",
-        },
-        {
-          scenes:"场景23—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物为废品",
-          one:"基本流",
-          two:"备选流1",
-          three:"备选流2",
-          four:"备选流3",
-          five:"备选流5",
-          six:"备选流7",
-          seven:"",
-        },
-        
-        ],
-        resultData:[{
-          num:"1",
-          scenes:"场景1—合同成功结束",
-          one:"是",
-          two:"/",
-          three:"/",
-          four:"/",
-          five:"/",
-          six:"是",
-        },
-        {
-          num:"2",
-          scenes:"场景2—可用库存不满足销售需求",
-          one:"否",
-          two:"是",
-          three:"/",
-          four:"/",
-          five:"/",
-          six:"是",
-        },
-        {
-          num:"3",
-          scenes:"场景3—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，但生产的货物不合格",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"不合格",
-          five:"/",
-          six:"是",
-          
-        },
-        {
-          num:"4",
-          scenes:"场景4—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，生产的货物是废品",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"废品",
-          five:"/",
-          six:"是",
-        },
-        {
-          num:"5",
-          scenes:"场景5—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购的货物不合格",
-          one:"是",
-          two:"是",
-          three:"是",
-          four:"合格",
-          five:"不合格",
-          six:"是",
-        },
-        {
-          num:"6",
-          scenes:"场景6—货未发完",
-          one:"是",
-          two:"/",
-          three:"/",
-          four:"/",
-          five:"/",
-          six:"否",
-        },
-        {
-          num:"7",
-          scenes:"场景7—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，生产的货物合格",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"合格",
-          five:"/",
-          six:"是",
-        },
-        {
-          num:"8",
-          scenes:"场景8—库存不满足销售需求，有可用库存但货未发完",
-          one:"否",
-          two:"是",
-          three:"/",
-          four:"/",
-          five:"/",
-          six:"否",
-        },
-        {
-          num:"9",
-          scenes:"场景9—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物合格，但货物未发完",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"合格",
-          five:"/",
-          six:"否",
-        },
-        {
-          num:"10",
-          scenes:"场景10—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物不合格，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"不合格",
-          five:"/",
-          six:"否",
-        },
-        {
-          num:"11",
-          scenes:"场景11—可用库存不满足销售需求，没有可用库存，可用库存满足生产需求，货物为废品，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"是",
-          four:"废品",
-          five:"/",
-          six:"否",
-        },
-        {
-          num:"12",
-          scenes:"场景12—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物合格，但货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"合格",
-          five:"合格",
-          six:"否",
-        },
-        {
-          num:"13",
-          scenes:"场景13—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物不合格，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"不合格",
-          five:"合格",
-          six:"否",
-        },
-        {
-          num:"14",
-          scenes:"场景14—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物为废品，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"废品",
-          five:"不合格",
-          six:"否",
-        },
-        {
-          num:"15",
-          scenes:"场景15—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物合格，但货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"合格",
-          five:"不合格",
-          six:"否",
-        },
-        {
-          num:"16",
-          scenes:"场景16—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物不合格，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"不合格",
-          five:"不合格",
-          six:"否",
-        },
-        {
-          num:"17",
-          scenes:"场景17—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物为废品，且货物未发完",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"废品",
-          five:"不合格",
-          six:"否",
-        },
-        {
-          num:"18",
-          scenes:"场景18—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物合格",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"合格",
-          five:"合格",
-          six:"是",
-        },
-        {
-          num:"19",
-          scenes:"场景19—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物不合格",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"不合格",
-          five:"合格",
-          six:"是",
-        },
-        {
-          num:"20",
-          scenes:"场景20—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检合格，生产货物为废品",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"废品",
-          five:"合格",
-          six:"是",
-        },
-        {
-          num:"21",
-          scenes:"场景21—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物合格",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"合格",
-          five:"不合格",
-          six:"是",
-        },
-        {
-          num:"22",
-          scenes:"场景22—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物不合格",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"不合格",
-          five:"不合格",
-          six:"是",
-        },
-        {
-          num:"23",
-          scenes:"场景23—可用库存不满足销售需求，没有可用库存，可用库存不满足生产需求，采购质检不合格，生产货物为废品",
-          one:"否",
-          two:"否",
-          three:"否",
-          four:"废品",
-          five:"不合格",
-          six:"是",
-        },
-        ], }
+    return {
+      flowData: [{
+        scene: "场景1—经过采购、生产、销售流程，合同成功结案",
+        description: "基本流。",
+      },
+      {
+        scene: "场景2—可用库存已满足销售需求",
+        description: "基本流，备选流1；基本流。",
+      },
+      {
+        scene: "场景3—已有足够的可用库存",
+        description: "基本流，备选流2；基本流。",
+      },
+      {
+        scene: "场景4—可用库存已满足生产需求",
+        description: "基本流，备选流3；基本流。",
+      },
+      {
+        scene: "场景5—采购的货物不合格",
+        description: "基本流，备选流4；基本流。",
+      },
+      {
+        scene: "场景6—生产的货物不合格",
+        description: "基本流，备选流5；基本流。",
+      },
+      {
+        scene: "场景7—生产的货物是废品",
+        description: "基本流，备选流6；基本流。",
+      },
+      {
+        scene: "场景8—货物未发完",
+        description: "基本流，备选流7；基本流。",
+      },
+      {
+        scene: "场景9—已有足够的可用库存，货物多次未发完",
+        description: "基本流，备选流2；基本流，备选流7；基本流，备选流7；基本流。",
+      },        
+      {
+        scene: "场景10—可用库存已满足生产需求，生产的货物不合格",
+        description: "基本流，备选流3；基本流，备选流5；基本流。",
+      },
+      {
+        scene: "场景11—采购的货物不合格，生产的货物是废品",
+        description: "基本流，备选流4；基本流，备选流6；基本流。",
+      },
+      ],
+      useCaseData: [{
+        id: "1",
+        scene: "场景1",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "是",
+        production: "合格",
+        shipment: "是",
+      },
+      {
+        id: "2",
+        scene: "场景2",
+        inventory_sale: "是",
+        inventory: "n/a",
+        inventory_production: "n/a",
+        purchase: "n/a",
+        production: "n/a",
+        shipment: "是",
+      },
+      {
+        id: "3",
+        scene: "场景3",
+        inventory_sale: "否",
+        inventory: "是",
+        inventory_production: "n/a",
+        purchase: "n/a",
+        production: "n/a",
+        shipment: "是",
+      },
+      {
+        id: "4",
+        scene: "场景4",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "是",
+        purchase: "n/a",
+        production: "合格",
+        shipment: "是",
+      },
+      {
+        id: "5",
+        scene: "场景5",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "否",
+        production: "合格",
+        shipment: "是",
+      },
+      {
+        id: "6",
+        scene: "场景6",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "是",
+        production: "不合格",
+        shipment: "是",
+      },
+      {
+        id: "7",
+        scene: "场景7",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "是",
+        production: "废品",
+        shipment: "是",
+      },
+      {
+        id: "8",
+        scene: "场景8",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "是",
+        production: "合格",
+        shipment: "否",
+      },
+      {
+        id: "9",
+        scene: "场景9",
+        inventory_sale: "否",
+        inventory: "是",
+        inventory_production: "n/a",
+        purchase: "n/a",
+        production: "n/a",
+        shipment: "否(2次)",
+      },
+      {
+        id: "10",
+        scene: "场景10",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "是",
+        purchase: "n/a",
+        production: "不合格",
+        shipment: "是",
+      },
+      {
+        id: "11",
+        scene: "场景11",
+        inventory_sale: "否",
+        inventory: "否",
+        inventory_production: "否",
+        purchase: "否",
+        production: "废品",
+        shipment: "是",
+      }
+      ],
+    }
   },
   computed: {},
   watch: {},
   created() {},
   mounted() {},
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
 
 <style scoped lang="less">
-
-
 </style>
