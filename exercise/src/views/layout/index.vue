@@ -1,9 +1,9 @@
 <template>
   <el-container class="layout-container">
-    <el-aside class="aside" width="auto"
-      ><SideBar class="aside-menu" :is-collapse="isCollapse" />
+    <el-aside class="aside" width="auto">
+      <SideBar class="aside-menu" :is-collapse="isCollapse" />
     </el-aside>
-    <el-container>
+    <el-container direction="vertical">
       <HeaderBar @changeCollapse="changeCollapse" />
       <el-main style="height: 100px" class="main"><router-view /></el-main>
     </el-container>
