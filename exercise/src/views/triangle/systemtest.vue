@@ -16,8 +16,11 @@
           plain
           @click="doTest"
           :loading="loading"
-          >进行测试<i class="el-icon-upload el-icon--right"></i
-        ></el-button>
+          >
+            进行测试
+          <i class="el-icon--right"></i>
+        </el-button>
+
         <el-button
           @click="reset(value)"
           class="reset-button"
@@ -62,7 +65,7 @@
         ></el-table-column>
         <el-table-column
           prop="expectation"
-          label="程序预期输出"
+          label="预期输出"
           align="center"
         ></el-table-column>
         <el-table-column
@@ -91,7 +94,7 @@ export default {
   data() {
     return {
       options: [
-        { value: "1", label: "健壮性边界分析" },
+        { value: "1", label: "边界值分析" },
         { value: "2", label: "等价类法" },
       ],
       value: "1",
@@ -197,11 +200,11 @@ export default {
   background-color: #f7fff9;
 }
 .main-button {
-  width: 500px;
+  width: 200px;
   margin-top: 10px;
 }
 .reset-button {
-  width: 200px;
+  width: 100px;
   margin-top: 10px;
 }
 .main-header {

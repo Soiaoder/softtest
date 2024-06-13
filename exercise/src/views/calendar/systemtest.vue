@@ -17,7 +17,7 @@
           plain
           @click="doTest"
           :loading="loading"
-          >进行测试<i class="el-icon-upload el-icon--right"></i
+          >进行测试<i class="el-icon--right"></i
         ></el-button>
         <el-button
           @click="reset(value)"
@@ -48,20 +48,20 @@
         ></el-table-column>
         <el-table-column
           prop="year"
-          label="年份"
+          label="年"
           width="120"
           align="center"
         ></el-table-column>
         <el-table-column
           prop="month"
           width="120"
-          label="月份"
+          label="月"
           align="center"
         ></el-table-column>
         <el-table-column
           prop="day"
           width="120"
-          label="天"
+          label="日"
           align="center"
         ></el-table-column>
         <el-table-column
@@ -71,7 +71,7 @@
         ></el-table-column>
         <el-table-column
           prop="actual"
-          label="实际输出"
+          label="程序实际输出"
           align="center"
         ></el-table-column>
         <el-table-column
@@ -96,8 +96,8 @@ export default {
   data() {
     return {
       options: [
-        { value: "1", label: "健壮边界值分析" },
-        { value: "2", label: "强健壮等价类测试" },
+        { value: "1", label: "边界值分析" },
+        { value: "2", label: "等价类测试" },
         { value: "3", label: "决策表法"},
       ],
       value: "1",
@@ -108,7 +108,7 @@ export default {
   },
   computed: {
     tableHeight(){
-      return (this.parentHeight - 260) > 650 ? 650 : (this.parentHeight - 260);
+      return (this.parentHeight - 260) > 450 ? 450 : (this.parentHeight - 260);
     }
   },
   watch: {
@@ -151,7 +151,7 @@ export default {
         let resD = d
         let res = ""
         if(y < 1900 || y > 2100 || m < 1 || m > 12 || d < 1 || d > 31){
-          res = "-1"
+          res = "error"
         }
         else {
           if(m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12){
@@ -167,7 +167,7 @@ export default {
           }
           else if(m == 4 || m == 6 || m == 9 || m == 11){
             if(d > 30){
-              res = "-1"
+              res = "error"
             }
             else {
               resD = d + 1
@@ -184,7 +184,7 @@ export default {
           else {
             if((y == 1900 || y == 2100)||(y % 4 != 0)){
               if(d > 28){
-                res = "-1"
+                res = "error"
               }
               else {
                 resD = d + 1
@@ -200,7 +200,7 @@ export default {
             }
             else {
               if(d > 29){
-                res = "-1"
+                res = "error"
               }
               else {
                 resD = d + 1
@@ -216,7 +216,7 @@ export default {
             }
           }
         }
-        if(res != "-1"){
+        if(res != "error"){
           res = resY.toString() + "-" + resM.toString() + "-" +resD.toString();
         }
         item.actual = res
@@ -249,11 +249,11 @@ export default {
   background-color: #f7fff9;
 }
 .main-button {
-  width: 500px;
+  width: 200px;
   margin-top: 10px;
 }
 .reset-button {
-  width: 200px;
+  width: 100px;
   margin-top: 10px;
 }
 .main-header{

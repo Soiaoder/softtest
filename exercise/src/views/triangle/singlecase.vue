@@ -15,19 +15,14 @@
       <el-form-item label="第三条边的值">
         <el-input v-model="formLabelAlign.C"></el-input>
       </el-form-item>
-      <el-form-item label="程序预期输出">
-        <el-input v-model="formLabelAlign.expectation"></el-input>
-      </el-form-item>
     </el-form>
-          <el-button
-        class="main-button"
-        type="success"
-        plain
-        @click="doTest"
-        :loading="loading"
-        >进行测试<i class="el-icon-upload el-icon--right"></i
-      ></el-button>
-        <div>
+      <div style="display: flex; justify-content: center;">
+        <el-button class="main-button" type="success" plain @click="doTest" :loading="loading">
+          进行测试
+          <i class="el-icon--right"></i>
+        </el-button>
+      </div>
+      <div>
     <span>实际输出：{{actual}}</span>
   </div>
   </div>
@@ -48,7 +43,6 @@ export default {
           A: "",
           B: "",
           C: "",
-          expectation: ""
         }, 
         date:"",
         loading:false,
@@ -107,8 +101,8 @@ export default {
   margin-top: 10px;
 }
 .main-button {
-  width:100%;
-
+  width:500px;
+  margin: 0 auto;
 }
 .box-card {
   padding: 0;

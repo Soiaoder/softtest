@@ -16,14 +16,12 @@
         <el-input v-model="formLabelAlign.day"></el-input>
       </el-form-item>
     </el-form>
-          <el-button
-        class="main-button"
-        type="success"
-        plain
-        @click="doTest"
-        :loading="loading"
-        >进行测试<i class="el-icon-upload el-icon--right"></i
-      ></el-button>
+      <div style="display: flex; justify-content: center;">
+        <el-button class="main-button" type="success" plain @click="doTest" :loading="loading">
+          进行测试
+          <i class="el-icon--right"></i>
+        </el-button>
+      </div>
         <div>
     <span>实际输出：{{actual}}</span>
   </div>
@@ -158,7 +156,7 @@ export default {
   margin-top: 10px;
 }
 .main-button {
-  width:100%;
+  width:500px;
 
 }
 .box-card {

@@ -18,13 +18,9 @@
           <SingleCase />
         </el-tab-pane>
 
-        <el-tab-pane label="测试用例文件处理" name="fourth">
-          <ExcelFile />
-        </el-tab-pane>
+       
 
-        <el-tab-pane label="缺陷版本记录" name="fifth">
-          <BugRecord :parentHeight="parentHeight" />
-        </el-tab-pane>
+        
       </el-tabs>
     </el-card>
   </div>
@@ -34,8 +30,8 @@
 import TriangleQuestion from "./question";
 import SystemTest from "./systemtest";
 import SingleCase from "./singlecase";
-import ExcelFile from "./excelfile";
-import BugRecord from "./bug";
+
+
 
 export default {
   name: "Triangle",
@@ -43,8 +39,6 @@ export default {
     TriangleQuestion,
     SystemTest,
     SingleCase,
-    ExcelFile,
-    BugRecord,
   },
   props: {},
   data() {
