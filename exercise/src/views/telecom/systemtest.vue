@@ -9,7 +9,7 @@
           :value="item.value"
         />
       </el-select>
-      <div class="data-text">测试中日期取2021年5月（共31天）</div>
+      <div class="data-text">测试的时间取2024年5月</div>
       <div class="button-group">
         <el-button
         class="main-button"
@@ -17,8 +17,7 @@
         plain
         @click="doTest"
         :loading="loading"
-        >进行测试<i class="el-icon-upload el-icon--right"></i
-      ></el-button>
+        >进行测试<i class="el-icon--right"></i></el-button>
       <el-button @click="reset(value)" class="reset-button" type="warning" plain>重置</el-button>
       </div>
     </div>
@@ -42,13 +41,13 @@
         ></el-table-column>
         <el-table-column
           prop="X"
-          label="本月的通话分钟数X（分钟）"
+          label="本月的通话分钟数"
           width="240"
           align="center"
         ></el-table-column>
         <el-table-column
           prop="Y"
-          label="本年度至本月的累计未按时缴费的次数Y（次）"
+          label="本年度至本月的累计未按时缴费的次数"
           align="center"
         ></el-table-column>
         <el-table-column

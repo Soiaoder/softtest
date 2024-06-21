@@ -6,10 +6,10 @@
       label-width="400px"
       :model="formLabelAlign"
     >
-      <el-form-item label="本月的通话分钟数X（分钟）">
+      <el-form-item label="本月的通话分钟数">
         <el-input v-model="formLabelAlign.X"></el-input>
       </el-form-item>
-      <el-form-item label="本年度至本月的累计未按时缴费的次数Y（次）">
+      <el-form-item label="本年度至本月的累计未按时缴费的次数">
         <el-input v-model="formLabelAlign.Y"></el-input>
       </el-form-item>
       <el-form-item label="每月的电话总费用预期输出">
@@ -22,7 +22,7 @@
         plain
         @click="doTest"
         :loading="loading"
-        >进行测试<i class="el-icon-upload el-icon--right"></i
+        >进行测试<i class="el-icon--right"></i
       ></el-button>
         <div>
     <span>实际输出：{{actual}}</span>
@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import { testcash } from "@/api/cashtest.js";
 export default {
   name: "SingleCase",
   components: {},
