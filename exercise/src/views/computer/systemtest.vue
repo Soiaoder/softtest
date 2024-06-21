@@ -1,14 +1,6 @@
 <template>
   <div class="system-test">
     <div class="main-header">
-      <el-select v-model="value" placeholder="请选择测试方法">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
       <div class="button-group">
         <el-button
           class="main-button"
@@ -16,7 +8,7 @@
           plain
           @click="doTest"
           :loading="loading"
-          >进行测试<i class="el-icon-upload el-icon--right"></i
+          >进行测试<i class="el-icon--right"></i
         ></el-button>
         <el-button
           @click="reset(value)"
@@ -47,18 +39,18 @@
         ></el-table-column>
         <el-table-column
           prop="M"
-          label="销售的主机数量M（台）"
+          label="主机销售量"
           width="240"
           align="center"
         ></el-table-column>
         <el-table-column
           prop="I"
-          label="销售的显示器数量I（台）"
+          label="显示器销售量"
           align="center"
         ></el-table-column>
         <el-table-column
           prop="P"
-          label="销售的外设数量P（套）"
+          label="外设销售量"
           align="center"
         ></el-table-column>
         <el-table-column
@@ -93,14 +85,12 @@
 
 <script>
 import mock_1_json from "@/mock/sales/sales_mock.json";
-import { testsales } from "@/api/salestest.js";
 export default {
   name: "SystemTest",
   components: {},
   props: ["parentHeight"],
   data() {
     return {
-      options: [{ value: "1", label: "健壮性边界分析法" }],
       value: "1",
       tableData: [],
       loading: false,

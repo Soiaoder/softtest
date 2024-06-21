@@ -6,13 +6,13 @@
       label-width="400px"
       :model="formLabelAlign"
     >
-      <el-form-item label="销售的主机数量M（台）">
+      <el-form-item label="主机销售量">
         <el-input v-model="formLabelAlign.M"></el-input>
       </el-form-item>
-      <el-form-item label="销售的显示器数量I（台）">
+      <el-form-item label="显示器销售量">
         <el-input v-model="formLabelAlign.I"></el-input>
       </el-form-item>
-      <el-form-item label="销售的外设数量P（套）">
+      <el-form-item label="外设销售量">
         <el-input v-model="formLabelAlign.P"></el-input>
       </el-form-item>
       <el-form-item label="预计销售额（元）">
@@ -28,7 +28,7 @@
         plain
         @click="doTest"
         :loading="loading"
-        >进行测试<i class="el-icon-upload el-icon--right"></i
+        >进行测试<i class="el-icon--right"></i
       ></el-button>
         <div>
     <span>实际销售额：{{A}}</span>
@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import { testsales } from "@/api/salestest.js";
 export default {
   name: "SingleCase",
   components: {},
