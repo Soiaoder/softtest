@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span style="font-size:24px;"><b>&nbsp;电脑销售系统</b></span>
+        <span style="font-size:24px;"><b>电脑销售系统</b></span>
       <div style="font-size:16px;">
         
       <p>在电脑销售系统中，使用边界值方法对以下问题进行分析，并设计测试用例：</p>

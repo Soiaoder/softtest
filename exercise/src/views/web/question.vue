@@ -1,8 +1,8 @@
 <template>
     <div>
-        <span style="font-size:24px;"><b>&nbsp;实时Web系统</b></span>
+        <span style="font-size:24px;"><b>实时Web系统</b></span>
       <div style="font-size:16px;">
-  <img src="./14-0.png"/>
+  <img style="margin-top: 20px;" src="./14-0.png"/>
   <p>根据题意，设计下图状态：</p>
   <img src="./14.png"/>
   <p>其正交表如下：</p>

@@ -97,7 +97,7 @@ export default {
   },
   computed: {
     tableHeight(){
-      return (this.parentHeight - 260) > 700 ? 700 : (this.parentHeight - 260);
+      return (this.parentHeight - 260) > 500 ? 500 : (this.parentHeight - 260);
     }
   },
   watch: {
@@ -223,7 +223,7 @@ export default {
   background-color: #f7fff9;
 }
 .main-button {
-  width: 500px;
+  width: 200px;
   margin-top: 10px;
 }
 .reset-button {

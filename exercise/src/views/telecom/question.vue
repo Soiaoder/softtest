@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span style="font-size: 24px"><b>&nbsp;电信收费问题系统</b></span>
+    <span style="font-size: 24px"><b>电信收费问题系统</b></span>
     <div style="font-size: 16px">
       <p>研究一个与我们的生活息息相关的电信收费问题系统，需求描述如下：</p>
       <p>A.每月的电话总费用=基本月租费+折扣后的实际的通话费，如果没有折扣则按实际通话费计算，基本月租费为25元，每分钟通话费为0.15元。</p>

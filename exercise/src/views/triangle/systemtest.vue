@@ -108,7 +108,7 @@ export default {
   },
   computed: {
     tableHeight() {
-      return this.parentHeight - 260 > 700 ? 700 : this.parentHeight - 260;
+      return this.parentHeight - 260 > 500 ? 500 : this.parentHeight - 260;
     },
   },
   watch: {

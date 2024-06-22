@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span style="font-size: 24px"><b>&nbsp;万年历问题</b></span>
+    <span style="font-size: 24px"><b>万年历问题</b></span>
     <div style="font-size: 14px">
       <p>问题描述：
         以"yyyy-mm-dd"的形式输入一个日期，则系统会输出下一天

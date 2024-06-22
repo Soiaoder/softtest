@@ -1,13 +1,13 @@
 <template>
     <div>
-        <span style="font-size:24px;"><b>&nbsp;电商平台系统</b></span>
+        <span style="font-size:24px;"><b>电商平台系统</b></span>
       <div style="font-size:16px;">
         
       <p >题目：边界值测试可以适用于function(method) level，class level,，system level，分析电商平台系统测试时考虑的边界值情况。</p>
 
 </div>
 
-  <p style="margin-top:100px;font-size:20px;">1. 电商平台系统介绍</p>
+  <p style="margin-top:50px;font-size:20px;">1. 电商平台系统介绍</p>
   <p>1.1 功能概述</p>
   <p>    电商平台系统是一个提供给用户进行在线购物的系统，涵盖从用户注册、商品浏览、到订单支付和售后服务的全流程功能。用户可以通过注册和登录系统，管理个人账户信息</p>
   <p>信息，包括收货地址和联系方式；平台支持卖家发布商品，包含详细的商品描述、价格、库存和分类，方便用户通过浏览和搜索功能找到所需商品。购物车功能允许用户添加和管</p>
@@ -22,15 +22,15 @@
   <p>取消订单：用户对已经下的订单进行取消操作</p>
   <p>评价：用户对所购买的商品进行评价</p>
   <p>申请退款：用户对已经购买的商品申请退款</p>
-  <p style="margin-top:100px;font-size:20px;">2. Function Level 边界值情况分析</p>
+  <p style="margin-top:50px;font-size:20px;">2. Function Level 边界值情况分析</p>
   <p>系统中用户的用户名长度存在限制</p>
   <p>系统中用户的密码长度存在限制</p>
   <p>用户的邮箱格式、联系方式格式存在限制</p>
   <p>商家进行商品发布时的商品价格、商品数量、库存数量等信息存在上下限限制</p>
   <p>用户购物车内物品数量存在限制</p>
-  <p style="margin-top:100px;font-size:20px;">3. Class Level 边界值情况分析</p>
+  <p style="margin-top:50px;font-size:20px;">3. Class Level 边界值情况分析</p>
   <p>类之间的调用存在边界限制</p>
-  <p style="margin-top:100px;font-size:20px;">4. System Level 边界值情况分析</p>
+  <p style="margin-top:50px;font-size:20px;">4. System Level 边界值情况分析</p>
   <p >4.1 功能测试</p>
   <p>测试依据为需求文档及需求分析文档，验证产品功能是否符合需求。</p>
 <el-table
