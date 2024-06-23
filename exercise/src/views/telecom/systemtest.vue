@@ -9,7 +9,7 @@
           :value="item.value"
         />
       </el-select>
-      <div class="data-text">测试的时间取2024年5月</div>
+      <div class="data-text">以2024年6月为例</div>
       <div class="button-group">
         <el-button
         class="main-button"
@@ -97,7 +97,7 @@ export default {
   },
   computed: {
     tableHeight(){
-      return (this.parentHeight - 260) > 500 ? 500 : (this.parentHeight - 260);
+      return (this.parentHeight - 260) > 700 ? 700 : (this.parentHeight - 260);
     }
   },
   watch: {
@@ -138,7 +138,7 @@ export default {
         let time = parseFloat(item.X)
         let num = parseFloat(item.Y)
         let res = 0.0
-        if(time < 0 || time > 44640 || num < 0 || num > 11){
+        if(time < 0 || time > 43200 || num < 0 || num > 11){
           res = -1
         }
         else{
@@ -223,7 +223,7 @@ export default {
   background-color: #f7fff9;
 }
 .main-button {
-  width: 200px;
+  width: 500px;
   margin-top: 10px;
 }
 .reset-button {
