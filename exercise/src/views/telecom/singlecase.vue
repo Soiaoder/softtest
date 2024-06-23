@@ -59,7 +59,7 @@ export default {
       let time = parseFloat(this.formLabelAlign.X)
       let num = parseFloat(this.formLabelAlign.Y)
       let res = 0.0
-      if(time < 0 || time > 44640 || num < 0 || num > 11){
+      if(time < 0 || time > 43200 || num < 0 || num > 11){
         res = -1
       }
       else{
