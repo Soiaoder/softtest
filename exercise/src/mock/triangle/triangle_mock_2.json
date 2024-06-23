@@ -1,7 +1,7 @@
 [
     {"id": "Test1", "A": 0, "B": 20, "C": 20, "expectation": "不构成三角形"},
     {"id": "Test2", "A": -1, "B": 20, "C": 20, "expectation": "不构成三角形"},
-    {"id": "Test3", "A": 1, "B": 98, "C": 100, "expectation": "不构成三角形"},
+    {"id": "Test3", "A": 1, "B": 18, "C": 20, "expectation": "不构成三角形"},
     {"id": "Test4", "A": 41, "B": 20, "C": 20, "expectation": "不构成三角形"},
     {"id": "Test5", "A": 10, "B": 10, "C": 20, "expectation": "不构成三角形"},
     
@@ -14,7 +14,6 @@
     {"id": "Test11", "A": 25, "B": 25, "C": 40, "expectation": "等腰三角形"},
     
     {"id": "Test12", "A": 10, "B": 12, "C": 15, "expectation": "一般三角形"},
-    {"id": "Test13", "A": 7, "B": 10, "C": 12, "expectation": "一般三角形"},
-    {"id": "Test14", "A": 40, "B": 30, "C": 10, "expectation": "一般三角形"}
+    {"id": "Test13", "A": 40, "B": 30, "C": 12, "expectation": "一般三角形"}
     
   ]
